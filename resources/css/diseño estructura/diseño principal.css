@@ -1,0 +1,150 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7f5;
+    color: #25352f;
+}
+
+/* NAVEGACION */
+
+.navbar {
+    background: #173d36;
+    color: white;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.brand-icon {
+    font-size: 28px;
+}
+
+.brand strong,
+.brand small {
+    display: block;
+}
+
+.brand small {
+    color: #c7ddd2;
+    font-size: 11px;
+    margin-top: 3px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.nav-links a:hover {
+    color: #a9d3bb;
+}
+
+.nav-button {
+    background: #d7e9df;
+    color: #173d36;
+    padding: 11px 20px;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* CONTENIDO */
+
+main {
+    min-height: 60vh;
+}
+
+/* FOOTER */
+
+.footer {
+    background: #173d36;
+    color: white;
+    padding: 45px 7% 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-bottom: 35px;
+}
+
+.footer-brand {
+    max-width: 300px;
+}
+
+.footer-brand p {
+    color: #c7ddd2;
+    margin-top: 12px;
+    line-height: 1.6;
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-section a {
+    color: #c7ddd2;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-section a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    border-top: 1px solid #46645b;
+    padding-top: 20px;
+    color: #c7ddd2;
+    font-size: 12px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        flex-wrap: wrap;
+        gap: 18px;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .nav-button {
+        display: none;
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+}
