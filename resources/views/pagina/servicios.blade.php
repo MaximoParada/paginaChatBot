@@ -16,8 +16,8 @@
 <section class="services-section">
     <div class="services-container" style="max-width: 1100px; margin: 0 auto; padding: 20px;">
 
-        
-        <!-- Grilla de Tarjetas Desplegables (Grid de 3 Columnas) -->
+
+        <!-- Grilla de Tarjetas Desplegables -->
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; width: 100%; margin-bottom: 40px;">
 
             <!-- 1. Instalaciones Residenciales -->
@@ -35,7 +35,7 @@
                             <span style="color: #0284c7; font-size: 0.85rem; font-weight: 600;">Ver detalle ▼</span>
                         </div>
                     </summary>
-                    <div style="margin-top: 20px; pt-3; border-top: 1px solid #f1f5f9; text-align: center;">
+                    <div style="margin-top: 20px; padding-top: 16px; border-top: 1px solid #f1f5f9; text-align: center;">
                         <p style="font-size: 0.9rem; color: #64748b; line-height: 1.6; margin: 0;">
                             Cableado completo, montaje de tableros domiciliarios, llaves térmicas, disyuntores y puntos de luz según normativa vigente.
                         </p>
@@ -60,7 +60,7 @@
                             <span style="color: #ef4444; font-size: 0.85rem; font-weight: 600;">Ver detalle ▼</span>
                         </div>
                     </summary>
-                    <div style="margin-top: 20px; pt-3; border-top: 1px solid #f1f5f9; text-align: center;">
+                    <div style="margin-top: 20px; padding-top: 16px; border-top: 1px solid #f1f5f9; text-align: center;">
                         <p style="font-size: 0.9rem; color: #64748b; line-height: 1.6; margin: 0;">
                             Atención rápida ante cortocircuitos, bajas de tensión o emergencias eléctricas en viviendas particulares.
                         </p>
@@ -85,7 +85,7 @@
                             <span style="color: #0284c7; font-size: 0.85rem; font-weight: 600;">Ver detalle ▼</span>
                         </div>
                     </summary>
-                    <div style="margin-top: 20px; pt-3; border-top: 1px solid #f1f5f9; text-align: center;">
+                    <div style="margin-top: 20px; padding-top: 16px; border-top: 1px solid #f1f5f9; text-align: center;">
                         <p style="font-size: 0.9rem; color: #64748b; line-height: 1.6; margin: 0;">
                             Inspección técnica de seguridad, puesta a tierra (jabalinas) y emisión de certificados aptos para habilitación.
                         </p>
@@ -108,7 +108,7 @@
                             <span style="color: #0284c7; font-size: 0.85rem; font-weight: 600;">Ver detalle ▼</span>
                         </div>
                     </summary>
-                    <div style="margin-top: 20px; pt-3; border-top: 1px solid #f1f5f9; text-align: center;">
+                    <div style="margin-top: 20px; padding-top: 16px; border-top: 1px solid #f1f5f9; text-align: center;">
                         <p style="font-size: 0.9rem; color: #64748b; line-height: 1.6; margin: 0;">
                             Diseño, armado y mantenimiento preventivo de tableros eléctricos industriales de alta demanda energética.
                         </p>
@@ -133,7 +133,7 @@
                             <span style="color: #0284c7; font-size: 0.85rem; font-weight: 600;">Ver detalle ▼</span>
                         </div>
                     </summary>
-                    <div style="margin-top: 20px; pt-3; border-top: 1px solid #f1f5f9; text-align: center;">
+                    <div style="margin-top: 20px; padding-top: 16px; border-top: 1px solid #f1f5f9; text-align: center;">
                         <p style="font-size: 0.9rem; color: #64748b; line-height: 1.6; margin: 0;">
                             Estudio de eficiencia energética y corrección de factor de potencia para reducir penalizaciones en la factura.
                         </p>
@@ -156,7 +156,7 @@
                             <span style="color: #0284c7; font-size: 0.85rem; font-weight: 600;">Ver detalle ▼</span>
                         </div>
                     </summary>
-                    <div style="margin-top: 20px; pt-3; border-top: 1px solid #f1f5f9; text-align: center;">
+                    <div style="margin-top: 20px; padding-top: 16px; border-top: 1px solid #f1f5f9; text-align: center;">
                         <p style="font-size: 0.9rem; color: #64748b; line-height: 1.6; margin: 0;">
                             Planes periódicos de revisión para comercios e industrias, minimizando paradas de producción imprevistas.
                         </p>
@@ -166,7 +166,7 @@
 
         </div>
 
-        <!-- Única tarjeta final con acción y redirección -->
+        <!-- Banner final de acción -->
         <div style="background-color: #ffffff; border: 2px solid #ffc107; border-radius: 16px; padding: 35px 20px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-top: 20px;">
             <h2 style="font-size: 1.5rem; font-weight: 700; color: #0f172a; margin-bottom: 10px;">¿Listo para contratar tu servicio?</h2>
             <p style="color: #64748b; font-size: 0.95rem; margin-bottom: 20px;">Iniciá tu solicitud o trámite online en pocos pasos desde nuestra plataforma.</p>
