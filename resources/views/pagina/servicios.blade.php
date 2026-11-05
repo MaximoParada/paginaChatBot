@@ -16,29 +16,7 @@
 <section class="services-section">
     <div class="services-container" style="max-width: 1100px; margin: 0 auto; padding: 20px;">
 
-        <!-- Botones de Filtrado (Sin emojis) -->
-        <div class="filter-switcher" style="display: flex; justify-content: center; gap: 15px; margin-bottom: 35px;">
-            <button type="button" class="filter-btn" data-filter="hogar" style="display: flex; align-items: center; gap: 8px; border-radius: 50px; padding: 10px 24px; font-weight: 600;">
-                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                </svg>
-                Particulares / Hogar
-            </button>
-            <button type="button" class="filter-btn" data-filter="empresa" style="display: flex; align-items: center; gap: 8px; border-radius: 50px; padding: 10px 24px; font-weight: 600;">
-                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
-                    <line x1="9" y1="6" x2="9.01" y2="6"></line>
-                    <line x1="15" y1="6" x2="15.01" y2="6"></line>
-                    <line x1="9" y1="10" x2="9.01" y2="10"></line>
-                    <line x1="15" y1="10" x2="15.01" y2="10"></line>
-                    <line x1="9" y1="14" x2="9.01" y2="14"></line>
-                    <line x1="15" y1="14" x2="15.01" y2="14"></line>
-                </svg>
-                Empresas / Comercio
-            </button>
-        </div>
-
+        
         <!-- Grilla de Tarjetas Desplegables (Grid de 3 Columnas) -->
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; width: 100%; margin-bottom: 40px;">
 
