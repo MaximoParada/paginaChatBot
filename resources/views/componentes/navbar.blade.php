@@ -1,10 +1,10 @@
 <header class="custom-header">
     <div class="custom-navbar-container">
         
-        <!-- Logo ElectroNeuquén -->
-        <a href="{{ url('/') }}" class="brand-container">
-            <span style="font-size: 26px;">⚡</span>
-            <span class="brand-text-full">Electro<span>Neuquén</span></span>
+        <!-- Logo ElectroNeuquén más grande y con texto al lado -->
+        <a href="{{ url('/') }}" class="brand-container d-flex align-items-center text-decoration-none gap-2">
+            <img src="{{ asset('img/logo electroneuquen.png') }}" alt="ElectroNeuquén" class="img-fluid" style="max-height: 60px; width: auto; object-fit: contain;">
+            <span class="brand-text-full fw-bold fs-4 text-dark">Electro<span style="color: #0d6efd;">Neuquén</span></span>
         </a>
 
         <!-- Buscador con forma de Píldora -->
@@ -19,7 +19,7 @@
             </div>
         </div>
 
-        <!-- Links con Reactividad (Línea inferior activa) -->
+        <!-- Links con Reactividad -->
         <ul class="nav-menu-links">
             <li>
                 <a href="{{ url('/') }}" class="{{ request()->is('/') ? 'active' : '' }}">

@@ -16,83 +16,95 @@
 </section>
 
 <!-- Sección Trámites -->
-<section class="section-tramites">
-    <div class="tramites-container">
+<section class="section-tramites py-4">
+    <div class="tramites-container container" style="max-width: 800px;">
         
-        <h2 class="section-title">Gestioná tus trámites desde nuestra oficina</h2>
+        <h2 class="display-6 fw-bold text-dark mb-4 text-center">Gestioná tus trámites desde nuestra oficina</h2>
 
         <!-- Acceso Principal: Oficina Virtual -->
-        <a href="{{ url('/oficina') }}" class="card-main-link">
-            <div class="card-icon-box">
-                <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="12" y="16" width="40" height="26" rx="4" stroke="#2d3748" stroke-width="3"/>
-                    <path d="M6 48h52a2 2 0 002-2v-2H4v2a2 2 0 002 2z" stroke="#2d3748" stroke-width="3"/>
-                    <path d="M34 22l-6 10h6l-2 8 8-10h-6l2-8z" fill="#ffc107"/>
+        <a href="{{ url('/oficina') }}" class="card-main-link rounded-4 shadow-sm p-3 mb-3 d-flex align-items-center justify-content-between text-decoration-none bg-white">
+            <div class="card-icon-box bg-light rounded-circle p-3 d-flex align-items-center justify-content-center">
+                <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#0d6efd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                    <line x1="12" y1="17" x2="12" y2="21"></line>
                 </svg>
             </div>
-            <span class="card-title-text">Oficina virtual</span>
-            <div class="card-chevron">
+            <span class="card-title-text fw-semibold fs-5 text-dark">Oficina virtual</span>
+            <div class="card-chevron text-muted">
                 <svg width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
                 </svg>
             </div>
         </a>
 
-        <!-- Accesos Secundarios -->
-        <div class="cards-grid">
+        <!-- Accesos Secundarios Corregidos (Ancho completo flexible para no cortarse) -->
+        <div class="row g-3">
             
-            <a href="{{ url('/servicios') }}" class="card-sub-link">
-                <div class="card-icon-box">
-                    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M32 12a20 20 0 100 40 20 20 0 000-40z" stroke="#2d3748" stroke-width="3"/>
-                        <path d="M32 8v4m0 40v4m20-24h-4M16 32h-4m27.1-14.1l-2.8 2.8M19.7 44.3l-2.8 2.8m0-28.2l2.8 2.8m24.6 24.6l2.8 2.8" stroke="#2d3748" stroke-width="3" stroke-linecap="round"/>
-                        <path d="M34 24l-5 8h5l-2 6 7-8h-5l2-6z" fill="#ffc107"/>
-                    </svg>
-                </div>
-                <span class="card-sub-title-text">Servicios</span>
-                <div class="card-chevron">
-                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
-                    </svg>
-                </div>
-            </a>
+            <!-- Tarjeta de Servicios -->
+            <div class="col-12 col-md-6">
+                <a href="{{ url('/servicios') }}" class="card-sub-link rounded-4 shadow-sm p-3 d-flex align-items-center justify-content-between text-decoration-none bg-white h-100">
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="card-icon-box bg-light rounded-circle p-3 d-flex align-items-center justify-content-center" style="min-width: 50px;">
+                            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#0d6efd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                            </svg>
+                        </div>
+                        <span class="card-sub-title-text fw-semibold text-dark fs-5">Servicios</span>
+                    </div>
+                    <div class="card-chevron text-muted">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                        </svg>
+                    </div>
+                </a>
+            </div>
 
-            <a href="#" class="card-sub-link">
-                <div class="card-icon-box">
-                    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="10" y="14" width="44" height="38" rx="4" stroke="#2d3748" stroke-width="3"/>
-                        <path d="M10 24h44" stroke="#2d3748" stroke-width="3"/>
-                        <path d="M20 10v8M44 10v8" stroke="#2d3748" stroke-width="3" stroke-linecap="round"/>
-                        <circle cx="22" cy="32" r="3" fill="#ffc107"/>
-                        <circle cx="32" cy="32" r="3" fill="#ffc107"/>
-                        <circle cx="42" cy="32" r="3" fill="#ffc107"/>
-                        <circle cx="22" cy="42" r="3" fill="#ffc107"/>
-                        <circle cx="32" cy="42" r="3" fill="#ffc107"/>
-                        <circle cx="42" cy="42" r="3" fill="#ffc107"/>
-                    </svg>
-                </div>
-                <span class="card-sub-title-text">Cortes<br>programados</span>
-                <div class="card-chevron">
-                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
-                    </svg>
-                </div>
-            </a>
+            <!-- Tarjeta de Cortes Programados -->
+            <div class="col-12 col-md-6">
+                <a href="#" class="card-sub-link rounded-4 shadow-sm p-3 d-flex align-items-center justify-content-between text-decoration-none bg-white h-100">
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="card-icon-box bg-light rounded-circle p-3 d-flex align-items-center justify-content-center" style="min-width: 50px;">
+                            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#0d6efd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
+                        </div>
+                        <span class="card-sub-title-text fw-semibold text-dark fs-5 text-nowrap">Cortes programados</span>
+                    </div>
+                    <div class="card-chevron text-muted">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                        </svg>
+                    </div>
+                </a>
+            </div>
 
         </div>
 
-        <div class="info-divider">
-            <span>ℹ️ Información y atención en un solo lugar</span>
+        <div class="text-center my-4">
+            <span class="text-secondary fw-medium fs-6">Información y atención en un solo lugar</span>
         </div>
 
-        <div class="foqui-section">
-            <h3 class="foqui-title">¿Necesitás ayuda? ¡Preguntale a Foqui!</h3>
-            <div class="foqui-avatar">
-                💡
+        <!-- Texto completo actualizado de Foqui -->
+        <div class="foqui-section text-center my-4">
+            <h3 class="fw-bold fs-4 text-dark mb-2">¿Necesitás ayuda? ¡Preguntale a Foqui!</h3>
+            <p class="text-secondary fs-5 mb-3">Nuestro asistente virtual a tu disposición.</p>
+            <div class="foqui-avatar d-inline-block">
+                <img src="{{ asset('img/foqui.jpg') }}" alt="Foqui Asistente Virtual" class="img-fluid" style="width: 85px; height: 85px; object-fit: contain;">
             </div>
         </div>
 
     </div>
 </section>
+
+<!-- Botón flotante del Chat -->
+<div class="position-fixed bottom-0 end-0 m-4 p-2" style="z-index: 1050;">
+    <button type="button" class="btn btn-light rounded-circle shadow-lg p-2 d-flex align-items-center justify-content-center border border-2 border-primary" style="width: 65px; height: 65px;">
+        <img src="{{ asset('img/foqui.jpg') }}" alt="Abrir Chat" class="img-fluid" style="width: 100%; height: 100%; object-fit: contain;">
+    </button>
+</div>
 
 @endsection

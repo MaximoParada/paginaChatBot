@@ -1053,3 +1053,15 @@
 .btn-iniciar-tramite:hover {
     color: #0b696d;
 }
+
+
+/* Importar tipografía moderna Montserrat/Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;500;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+}
