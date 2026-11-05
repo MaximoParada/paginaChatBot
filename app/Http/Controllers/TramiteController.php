@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Categoria;
 use App\Models\Tramite;
-
+//cont
 class TramiteController extends Controller
 {
     // Mostrar todas las categorias
