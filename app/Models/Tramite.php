@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Tramite extends Model
 {
     protected $fillable = [
-    'categoria_id',
-    'nombre',
-    'descripcion',
-    'tiempo_estimado',
-    'modalidad',
-    'activo'
+        'categoria_id',
+        'nombre',
+        'descripcion',
+        'tiempo_estimado',
+        'modalidad',
+        'activo'
     ];
     
     protected $table = 'tramites';
