@@ -1,0 +1,1055 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+
+
+
+
+
+
+
+
+
+/* ==========================================
+   1. ESTILOS DE LA NAVBAR (SIN LÍNEA INFERIOR VERDE)
+   ========================================== */
+:root {
+    --brand-turquesa: #0e8388;
+    --brand-dark: #1b4965;
+    --pill-bg: #eef2f5;
+    --text-muted: #8d99ae;
+    --footer-bg: #343a40;
+}
+
+.custom-header {
+    background-color: #ffffff;
+    width: 100%;
+    border-bottom: none; /* Se elimina la línea turquesa que tocaba la foto */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Sombra sutil y elegante en su lugar */
+}
+
+.custom-navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.brand-text-full {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--brand-dark);
+}
+
+.brand-text-full span {
+    color: var(--brand-turquesa);
+}
+
+.pill-search-container {
+    flex-grow: 1;
+    max-width: 320px;
+    margin: 0 40px;
+}
+
+.pill-search {
+    background-color: var(--pill-bg);
+    border-radius: 50px;
+    padding: 8px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pill-search input {
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 14px;
+    color: #333;
+    width: 100%;
+}
+
+.pill-search input::placeholder {
+    color: var(--text-muted);
+}
+
+.pill-search button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+.nav-menu-links {
+    display: flex;
+    gap: 12px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.nav-menu-links a {
+    text-decoration: none;
+    color: var(--brand-dark);
+    font-size: 15px;
+    font-weight: 700;
+    padding: 8px 20px;
+    border-radius: 50px;
+    border: 2px solid transparent;
+    transition: all 0.25s ease;
+    display: inline-block;
+}
+
+.nav-menu-links a:hover {
+    border-color: var(--brand-turquesa);
+    color: var(--brand-turquesa);
+    background-color: transparent;
+}
+
+.nav-menu-links a.active {
+    background-color: var(--brand-turquesa) !important;
+    color: #ffffff !important;
+    border-color: var(--brand-turquesa) !important;
+    box-shadow: 0 4px 12px rgba(14, 131, 136, 0.3);
+}
+
+/* ==========================================
+   2. ESTILOS DE INICIO (FOTO ALEJADA Y ENCUADRADA COMPLETA)
+   ========================================== */
+.hero-banner {
+    background: linear-gradient(135deg, #1b4965 0%, #0e8388 100%);
+    color: #ffffff;
+    padding: 70px 20px;
+    position: relative;
+    overflow: hidden;
+    min-height: 440px; /* Mayor espacio vertical para encuadrar la grúa entera */
+    display: flex;
+    align-items: center;
+}
+
+/* Fondo con encuadre en el operario y fusión suave hacia la izquierda */
+.hero-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 70%;
+    height: 100%;
+    background-image: url('/img/hero-electrico.jpg');
+    background-size: cover;
+    background-position: 85% 15%; /* Enfoca la cabeza/torso del operario arriba a la derecha */
+    opacity: 0.85;
+    
+    /* Máscara para que se desvanezca suavemente hacia la izquierda sin corte recto */
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 45%);
+    mask-image: linear-gradient(to right, transparent 0%, black 45%);
+    pointer-events: none;
+}
+
+.hero-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content {
+    max-width: 550px;
+}
+
+.hero-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.hero-title span {
+    color: #4fe0b6;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-bottom: 28px;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+}
+
+.btn-hero {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--brand-turquesa);
+    color: #ffffff;
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 14px rgba(14, 131, 136, 0.4);
+}
+
+.btn-hero:hover {
+    background-color: #0b696d;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.section-tramites {
+    background-color: #f2f8fc;
+    padding: 70px 20px 80px;
+}
+
+.tramites-container {
+    max-width: 780px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #2b364b;
+    margin-bottom: 36px;
+}
+
+.card-main-link {
+    display: grid;
+    grid-template-columns: 110px 1fr 40px;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 22px;
+    padding: 24px 32px;
+    text-decoration: none;
+    color: #2b364b;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    margin-bottom: 24px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid #ffffff;
+}
+
+.card-main-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.08);
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.card-sub-link {
+    display: grid;
+    grid-template-columns: 90px 1fr 30px;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 22px;
+    padding: 20px 24px;
+    text-decoration: none;
+    color: #2b364b;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid #ffffff;
+}
+
+.card-sub-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.08);
+}
+
+.card-icon-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1.5px solid #cbd5e1;
+    padding-right: 20px;
+    height: 100%;
+}
+
+.card-main-link .card-icon-box svg {
+    width: 58px;
+    height: 58px;
+}
+
+.card-sub-link .card-icon-box svg {
+    width: 46px;
+    height: 46px;
+}
+
+.card-title-text {
+    font-size: 1.55rem;
+    font-weight: 800;
+    text-align: center;
+    padding: 0 15px;
+    color: #2d3748;
+}
+
+.card-sub-title-text {
+    font-size: 1.2rem;
+    font-weight: 800;
+    text-align: center;
+    line-height: 1.25;
+    padding: 0 10px;
+    color: #2d3748;
+}
+
+.card-chevron {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: #4a5568;
+}
+
+.info-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 55px 0 40px;
+    color: #64748b;
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+.info-divider::before, .info-divider::after {
+    content: '';
+    flex-grow: 1;
+    height: 1px;
+    background-color: #cbd5e1;
+}
+
+.foqui-section {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.foqui-title {
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 24px;
+}
+
+.foqui-avatar {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* ==========================================
+   3. ESTILOS DEL FOOTER
+   ========================================== */
+.custom-footer {
+    background-color: var(--footer-bg);
+    color: #e2e8f0;
+    padding: 40px 20px 20px;
+    font-family: inherit;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+}
+
+.footer-col {
+    padding: 0 30px;
+}
+
+/* Divisiones verticales entre columnas */
+.footer-col:nth-child(1),
+.footer-col:nth-child(2) {
+    border-right: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.footer-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #ffffff;
+}
+
+.footer-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    color: #cbd5e1;
+}
+
+.footer-item svg {
+    flex-shrink: 0;
+}
+
+.footer-item a {
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-item a:hover {
+    color: #ffffff;
+}
+
+/* Iconos de Redes Sociales */
+.social-links {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.social-links a {
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-2px);
+    opacity: 0.8;
+}
+
+.social-handle {
+    font-size: 0.95rem;
+    color: #cbd5e1;
+    margin-left: 4px;
+}
+
+/* Línea de Derechos Reservados */
+.footer-bottom-bar {
+    max-width: 1100px;
+    margin: 30px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    text-align: center;
+    font-size: 0.9rem;
+    color: #94a3b8;
+}
+
+/* ==========================================
+   4. ESTILOS DE SERVICIOS 
+   ========================================== */
+.services-header {
+    background: linear-gradient(135deg, #1b4965 0%, #0e8388 100%);
+    color: #ffffff;
+    padding: 70px 20px;
+    position: relative;
+    overflow: hidden;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+}
+
+.services-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 65%;
+    height: 100%;
+    background-image: url('/img/servicios-banner.jpg');
+    background-size: cover;
+    background-position: right center;
+    opacity: 0.85;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 45%);
+    mask-image: linear-gradient(to right, transparent 0%, black 45%);
+    pointer-events: none;
+}
+
+.services-header-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.services-header-content {
+    max-width: 580px;
+    text-align: left;
+}
+
+/* Título con estilo exacto al banner de Inicio */
+.services-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.services-title span {
+    color: #4fe0b6; /* Verde turquesa idéntico a Inicio */
+}
+
+.services-subtitle {
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-bottom: 0;
+    line-height: 1.4;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+}
+
+.services-section {
+    background-color: #f2f8fc;
+    padding: 60px 20px 80px;
+}
+
+.services-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.filter-switcher {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 40px;
+}
+
+.filter-btn {
+    background-color: #ffffff;
+    color: #2b364b;
+    border: 2px solid #b0c4de;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.05rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    outline: none;
+}
+
+.filter-btn:hover {
+    border-color: var(--brand-turquesa);
+    color: var(--brand-turquesa);
+}
+
+.filter-btn.active {
+    background-color: var(--brand-turquesa) !important;
+    color: #ffffff !important;
+    border-color: var(--brand-turquesa) !important;
+    box-shadow: 0 6px 18px rgba(14, 131, 136, 0.35) !important;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+@media (max-width: 992px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.service-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 30px 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    border: 1px solid #ffffff;
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.2s ease;
+}
+
+.service-card.fade-out {
+    opacity: 0;
+    transform: scale(0.95);
+}
+
+.service-card.fade-in {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 35px rgba(14, 131, 136, 0.12);
+    border-color: #e1eff7;
+}
+
+.service-icon-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 18px;
+}
+
+.service-icon-bg {
+    width: 60px;
+    height: 60px;
+    background-color: #f0f7fb;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    flex-shrink: 0;
+}
+
+.service-card-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #2b364b;
+    margin: 0;
+}
+
+.service-card-desc {
+    font-size: 0.98rem;
+    color: #64748b;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.service-card-footer {
+    padding-top: 16px;
+    border-top: 1px solid #f1f5f9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.badge-category {
+    background-color: #e6f4f4;
+    color: var(--brand-turquesa);
+    font-size: 0.82rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 50px;
+    text-transform: uppercase;
+}
+
+.btn-consultar {
+    color: var(--brand-turquesa);
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.btn-consultar:hover {
+    color: #0b696d;
+}
+
+
+/* ==========================================
+   5. LLAMADO A LA ACCIÓN (CTA FINAL)
+   ========================================== */
+.cta-banner {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 40px 30px;
+    margin-top: 60px;
+    text-align: center;
+    box-shadow: 0 12px 35px rgba(14, 131, 136, 0.08);
+    border: 1px solid #e1eff7;
+}
+
+.cta-banner h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #2b364b;
+    margin-bottom: 12px;
+}
+
+.cta-banner p {
+    font-size: 1.05rem;
+    color: #64748b;
+    margin-bottom: 24px;
+}
+
+.btn-cta-oficina {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--brand-turquesa);
+    color: #ffffff;
+    padding: 14px 36px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.05rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    box-shadow: 0 6px 18px rgba(14, 131, 136, 0.35);
+}
+
+.btn-cta-oficina:hover {
+    background-color: #0b696d;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(14, 131, 136, 0.45);
+}
+
+
+/* ==========================================
+   6. ESTILOS DE OFICINA VIRTUAL 
+   ========================================== */
+.oficina-header {
+    background: linear-gradient(135deg, #1b4965 0%, #0e8388 100%);
+    color: #ffffff;
+    padding: 70px 20px;
+    position: relative;
+    overflow: hidden;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+}
+
+.oficina-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 65%;
+    height: 100%;
+    background-image: url('/img/oficina-banner.jpg');
+    background-size: cover;
+    background-position: right center;
+    opacity: 0.85;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 45%);
+    mask-image: linear-gradient(to right, transparent 0%, black 45%);
+    pointer-events: none;
+}
+
+.oficina-header-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.oficina-header-content {
+    max-width: 580px;
+    text-align: left;
+}
+
+.oficina-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.oficina-title span {
+    color: #4fe0b6;
+}
+
+.oficina-subtitle {
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-bottom: 0;
+    line-height: 1.4;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+}
+
+.oficina-section {
+    background-color: #f2f8fc;
+    padding: 60px 20px 80px;
+}
+
+.oficina-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* --- SECCIÓN 1: CONTRATAR SERVICIO --- */
+.contratar-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border-radius: 24px;
+    padding: 35px 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    border: 2px solid #e1eff7;
+    margin-bottom: 50px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 30px;
+}
+
+@media (max-width: 768px) {
+    .contratar-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
+.contratar-info h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #2b364b;
+    margin-bottom: 10px;
+}
+
+.contratar-info p {
+    font-size: 1.05rem;
+    color: #64748b;
+    margin: 0;
+}
+
+.btn-contratar-action {
+    background-color: var(--brand-turquesa);
+    color: #ffffff;
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.05rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.2s ease;
+    box-shadow: 0 6px 18px rgba(14, 131, 136, 0.35);
+}
+
+.btn-contratar-action:hover {
+    background-color: #0b696d;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(14, 131, 136, 0.45);
+}
+
+/* --- SECCIÓN 2: GESTIÓN DE TRÁMITES & DROPDOWN PERSONALIZADO --- */
+.tramites-header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.tramites-section-title {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #2b364b;
+    margin: 0;
+}
+
+/* Contenedor del Dropdown Custom */
+.custom-dropdown-container {
+    position: relative;
+    display: inline-block;
+}
+
+.custom-dropdown-btn {
+    background-color: #ffffff;
+    color: var(--brand-dark);
+    border: 2px solid var(--brand-turquesa);
+    border-radius: 50px;
+    padding: 10px 24px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(14, 131, 136, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.25s ease;
+}
+
+.custom-dropdown-btn:hover {
+    border-color: #0b696d;
+    box-shadow: 0 6px 18px rgba(14, 131, 136, 0.25);
+}
+
+.dropdown-arrow {
+    font-size: 12px;
+    transition: transform 0.25s ease;
+}
+
+.custom-dropdown-container.active .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+/* Lista flotante estilizada */
+.custom-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    width: 260px;
+    background: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+    border: 1px solid #e1eff7;
+    padding: 8px;
+    list-style: none;
+    margin: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.25s ease;
+    z-index: 100;
+}
+
+.custom-dropdown-container.active .custom-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.custom-dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 16px;
+    color: #2b364b;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: 12px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.custom-dropdown-item:hover {
+    background-color: #f0f7fb;
+    color: var(--brand-turquesa);
+}
+
+/* Grilla de Tarjetas */
+.tramites-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+@media (max-width: 992px) {
+    .tramites-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    .tramites-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.tramite-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 30px 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    border: 2px solid #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.tramite-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 35px rgba(14, 131, 136, 0.12);
+    border-color: #e1eff7;
+}
+
+.tramite-icon-title {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 14px;
+}
+
+.tramite-icon-box {
+    width: 52px;
+    height: 52px;
+    background-color: #f0f7fb;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.tramite-card-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #2b364b;
+    margin: 0;
+}
+
+.tramite-card-desc {
+    font-size: 0.95rem;
+    color: #64748b;
+    line-height: 1.45;
+    margin-bottom: 20px;
+}
+
+.btn-iniciar-tramite {
+    color: var(--brand-turquesa);
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-iniciar-tramite:hover {
+    color: #0b696d;
+}
