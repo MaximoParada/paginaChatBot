@@ -17,10 +17,15 @@ class ChatbotController extends Controller
         return response()->json($preguntas);
     }
 
+<<<<<<< HEAD
     /**
      * Busca la respuesta en la base de datos mediante Eloquent
      */
     public function responder(Request $request)
+=======
+    // Obtener la respuesta de una pregunta por ID
+    public function responder($id)
+>>>>>>> c0cb66dec9e4262fbee9317e6b956ae6e618b2eb
     {
         $consulta = trim($request->input('consulta'));
 
@@ -67,4 +72,27 @@ class ChatbotController extends Controller
             'respuesta' => 'No encontré información exacta sobre tu consulta en la base de datos. ¿Querés intentar con otra opción?'
         ]);
     }
+<<<<<<< HEAD
+=======
+
+    // NUEVO: Método que atiende el chat de Foqui desde el JavaScript
+    public function consultar(Request $request)
+    {
+        $valor = $request->input('consulta');
+
+        // Respuestas automáticas según el botón que presionó el usuario
+        $textoRespuesta = match ($valor) {
+            'facturacion' => 'Para ver tus facturas, ingresa a la sección de servicios o consulta tu último recibo.',
+            'corte' => 'Puedes reportar un corte comunicándote con nuestras oficinas o desde la central.',
+            'conexion' => 'Las nuevas conexiones se solicitan completando el formulario correspondiente.',
+            'agente' => 'Un representante del servicio eléctrico se comunicará contigo en breve.',
+            default => 'Entendido, procesando tu solicitud sobre: ' . $valor,
+        };
+
+        // Devuelve exactamente el JSON con la clave 'respuesta' que busca el JS
+        return response()->json([
+            'respuesta' => $textoRespuesta
+        ]);
+    }
+>>>>>>> c0cb66dec9e4262fbee9317e6b956ae6e618b2eb
 }

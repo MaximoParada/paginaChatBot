@@ -1,32 +1,29 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
-//Route::get('/', function () {
-   // return view('welcome');});
-Route::view('/chatbot', 'estructura');
-
 use App\Http\Controllers\InicioController;
 use App\Http\Controllers\OficinaController;
 use App\Http\Controllers\TramiteController;
+<<<<<<< HEAD
 use App\Http\Controllers\ChatbotController;
 
 Route::post('/api/chatbot-consulta', [ChatbotController::class, 'responder']);
+=======
+use App\Http\Controllers\ChatbotController; // Asegúrate de usar el nombre real de tu controlador de chat
+>>>>>>> c0cb66dec9e4262fbee9317e6b956ae6e618b2eb
 
-Route::get('/', [InicioController::class, 'index'])
-    ->name('inicio');
+Route::post('/chatbot-consulta', [ChatbotController::class, 'consultar']);
 
-Route::get('/oficina', [OficinaController::class, 'index'])
-    ->name('oficina');
+// Ruta para el Chatbot
+Route::view('/chatbot', 'estructura');
 
-Route::get('/servicios', [TramiteController::class, 'index'])
-    ->name('servicios');
+// 1. Página de Inicio (Usa InicioController)
+Route::get('/', [InicioController::class, 'index'])->name('inicio');
 
-// 1. Ruta para Inicio
-Route::get('/', function () {
-    return view('pagina.inicio');
-})->name('inicio');
+// 2. Página de Oficina Virtual (Usa OficinaController)
+Route::get('/oficina', [OficinaController::class, 'index'])->name('oficina');
 
+<<<<<<< HEAD
 // 2. Ruta para Oficina Virtual
 Route::get('/oficina', function () {
     return view('pagina.oficina');
@@ -38,3 +35,7 @@ Route::get('/servicios', function () {
 })->name('servicios');
 
 
+=======
+// 3. Página de Servicios (Usa TramiteController)
+Route::get('/servicios', [TramiteController::class, 'index'])->name('servicios');
+>>>>>>> c0cb66dec9e4262fbee9317e6b956ae6e618b2eb
