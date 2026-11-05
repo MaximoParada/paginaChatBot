@@ -1,9 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
 //Route::get('/', function () {
    // return view('welcome');});
-//Route::view('/chatbot', 'estructura');
+Route::view('/chatbot', 'estructura');
 
 use App\Http\Controllers\InicioController;
 use App\Http\Controllers\OficinaController;
