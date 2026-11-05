@@ -38,7 +38,7 @@
             </div>
         </a>
 
-        <!-- Accesos Secundarios Corregidos (Ancho completo flexible para no cortarse) -->
+        <!-- Accesos Secundarios -->
         <div class="row g-3">
             
             <!-- Tarjeta de Servicios -->
@@ -88,8 +88,8 @@
             <span class="text-secondary fw-medium fs-6">Información y atención en un solo lugar</span>
         </div>
 
-        <!-- Texto completo actualizado de Foqui -->
-        <div class="foqui-section text-center my-4">
+        <!-- Sección Foqui -->
+        <div class="foqui-section text-center my-4" style="cursor: pointer;" onclick="toggleChatbot()">
             <h3 class="fw-bold fs-4 text-dark mb-2">¿Necesitás ayuda? ¡Preguntale a Foqui!</h3>
             <p class="text-secondary fs-5 mb-3">Nuestro asistente virtual a tu disposición.</p>
             <div class="foqui-avatar d-inline-block">
@@ -102,9 +102,20 @@
 
 <!-- Botón flotante del Chat -->
 <div class="position-fixed bottom-0 end-0 m-4 p-2" style="z-index: 1050;">
-    <button type="button" class="btn btn-light rounded-circle shadow-lg p-2 d-flex align-items-center justify-content-center border border-2 border-primary" style="width: 65px; height: 65px;">
+    <button type="button" onclick="toggleChatbot()" class="btn btn-light rounded-circle shadow-lg p-2 d-flex align-items-center justify-content-center border border-2 border-primary" style="width: 65px; height: 65px;">
         <img src="{{ asset('img/foqui.jpg') }}" alt="Abrir Chat" class="img-fluid" style="width: 100%; height: 100%; object-fit: contain;">
     </button>
+</div>
+
+<!-- VENTANA FLOTANTE DEL CHATBOT (Ajustado alto y scroll container) -->
+<div id="botui-chat-container" class="position-fixed bottom-0 end-0 m-4 shadow-lg rounded-4 bg-white overflow-hidden" style="width: 350px; height: 480px; z-index: 1060; display: none; border: 2px solid #0d6efd;">
+    <div class="bg-primary text-white p-3 d-flex justify-content-between align-items-center">
+        <span class="fw-bold">💡 Foqui - Asistente Virtual</span>
+        <button type="button" class="btn-close btn-close-white" onclick="toggleChatbot()"></button>
+    </div>
+    <div id="foqui-botui-app" style="height: calc(100% - 56px); overflow-y: auto;" class="p-3">
+        <bot-ui></bot-ui>
+    </div>
 </div>
 
 @endsection
