@@ -9,7 +9,7 @@
             <h1 class="hero-title">Tu energía local,<br><span>siempre con vos</span></h1>
             <p class="hero-subtitle">Soluciones eléctricas para tu hogar, con confianza y seguridad.</p>
             <a href="{{ url('/servicios') }}" class="btn-hero">
-                Conocé nuestros servicios ➔
+                Conocé nuestros servicios 
             </a>
         </div>
     </div>
