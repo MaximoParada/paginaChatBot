@@ -72,7 +72,9 @@ function enviarConsultaLaravel(valor) {
         const metaCsrf = document.querySelector('meta[name="csrf-token"]');
         const tokenCSRF = metaCsrf ? metaCsrf.getAttribute('content') : '';
 
-        fetch('/api/chatbot-consulta', {
+        // 1. VERIFICA LA URL SEGÚN DÓNDE PUSISTE LA RUTA:
+        fetch('/chatbot-consulta', {  // <-- Si la pusiste en 'routes/api.php', déjala así. 
+                                          //     Si la pusiste en 'routes/web.php', cámbiala a '/chatbot-consulta'
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -85,7 +87,9 @@ function enviarConsultaLaravel(valor) {
         .then(data => {
             botui.message.update(indexLoading, {
                 loading: false,
-                content: data.respuesta || 'No recibí una respuesta válida.'
+                // 2. ASEGÚRATE QUE COINCIDA CON TU CONTROLADOR:
+                content: data.respuesta || 'No recibí una respuesta válida.' 
+                // data.respuesta lee la clave 'respuesta' que manda Laravel.
             }).then(mostrarOpcionesFoqui);
         })
         .catch(err => {

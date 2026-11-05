@@ -11,6 +11,6 @@ class OficinaController extends Controller
     {
         $oficinas = Oficina::where('activo', true)->get();
 
-        return view('oficinas', compact('oficinas'));
+        return view('pagina.oficina', compact('oficinas'));
     }
 }
