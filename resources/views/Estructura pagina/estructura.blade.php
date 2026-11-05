@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" href="{{ asset('css/diseño principal.css') }}">
 </head>
-
+<!--mierda -->
 <body>
     @include('components.navbar')  <!-- barra de navegacion la misma para todas las paginas-->
 
@@ -17,6 +17,6 @@
     </main>
 
     @include('components.footer') <!-- el mismo footer (pie de pagina) para todas las paginas-->
-<!-- porqueria -->
+<!-- porqueria -->  <!-- casi-->
 </body>
 </html>
