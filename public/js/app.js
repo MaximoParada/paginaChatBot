@@ -98,14 +98,10 @@ function enviarConsultaLaravel(valor) {
 }
 
 
-// ==========================================
-// EVENTOS AL CARGAR EL DOM (VISTAS ESPECÍFICAS)
-// ==========================================
+
 document.addEventListener('DOMContentLoaded', function () {
 
-    /* ==========================================
-       1. COMPONENTES GLOBALES (NAVBAR & HEADER)
-       ========================================== */
+ 
     (function initGlobalComponents() {
         const searchInput = document.querySelector('.pill-search input');
         if (searchInput) {
@@ -117,17 +113,12 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     })();
 
-    /* ==========================================
-       2. MÓDULO INICIO (HERO & INTERACCIONES)
-       ========================================== */
+
     (function initHomeModule() {
-        // Reservado para interacciones de la página principal
+    
     })();
 
-    /* ==========================================
-       4. MÓDULO SERVICIOS (FILTRADO & ANIMACIONES)
-       ========================================== */
-    (function initServicesModule() {
+        (function initServicesModule() {
         const filterButtons = document.querySelectorAll('.filter-btn');
         const serviceCards = document.querySelectorAll('.service-card');
 
@@ -163,9 +154,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     })();
 
-    /* ==========================================
-       6. MÓDULO OFICINA VIRTUAL (DROPDOWN & SCROLL)
-       ========================================== */
     (function initOficinaModule() {
         const dropdownContainer = document.getElementById('tramiteDropdown');
         if (!dropdownContainer) return;

@@ -9,6 +9,9 @@ Route::view('/chatbot', 'estructura');
 use App\Http\Controllers\InicioController;
 use App\Http\Controllers\OficinaController;
 use App\Http\Controllers\TramiteController;
+use App\Http\Controllers\ChatbotController;
+
+Route::post('/api/chatbot-consulta', [ChatbotController::class, 'responder']);
 
 Route::get('/', [InicioController::class, 'index'])
     ->name('inicio');
@@ -33,3 +36,5 @@ Route::get('/oficina', function () {
 Route::get('/servicios', function () {
     return view('pagina.servicios');
 })->name('servicios');
+
+
