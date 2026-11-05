@@ -10,13 +10,13 @@
 </head>
 
 <body>
-    @include('components.navbar')
+    @include('components.navbar')  <!-- barra de navegacion la misma para todas las paginas-->
 
     <main>
         @yield('content')
     </main>
 
-    @include('components.footer')
-
+    @include('components.footer') <!-- el mismo footer (pie de pagina) para todas las paginas-->
+<!-- porqueria -->
 </body>
 </html>
